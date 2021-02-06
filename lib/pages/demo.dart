@@ -8,13 +8,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 import 'package:gallery/codeviewer/code_displayer.dart';
 import 'package:gallery/codeviewer/code_style.dart';
 import 'package:gallery/constants.dart';
 import 'package:gallery/data/demos.dart';
 import 'package:gallery/data/gallery_options.dart';
 import 'package:gallery/feature_discovery/feature_discovery.dart';
-import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 import 'package:gallery/layout/adaptive.dart';
 import 'package:gallery/pages/splash.dart';
 import 'package:gallery/themes/gallery_theme_data.dart';
@@ -802,26 +802,55 @@ class CodeDisplayPage extends StatelessWidget {
           padding: isDesktop
               ? const EdgeInsets.only(bottom: 8)
               : const EdgeInsets.symmetric(vertical: 8),
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.white.withOpacity(0.15),
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-              ),
-            ),
-            onPressed: () async {
-              await Clipboard.setData(ClipboardData(text: _plainTextCode))
-                  .then(_showSnackBarOnCopySuccess)
-                  .catchError(_showSnackBarOnCopyFailure);
-            },
-            child: Text(
-              GalleryLocalizations.of(context).demoCodeViewerCopyAll,
-              style: Theme.of(context).textTheme.button.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white.withOpacity(0.15),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(4)),
                   ),
-            ),
+                ),
+                onPressed: () async {
+                  await Clipboard.setData(ClipboardData(text: _plainTextCode))
+                      .then(_showSnackBarOnCopySuccess)
+                      .catchError(_showSnackBarOnCopyFailure);
+                },
+                child: Text(
+                  'Open in dart pad',
+                  style: Theme.of(context).textTheme.button.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white.withOpacity(0.15),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(4)),
+                  ),
+                ),
+                onPressed: () async {
+                  await Clipboard.setData(ClipboardData(text: _plainTextCode))
+                      .then(_showSnackBarOnCopySuccess)
+                      .catchError(_showSnackBarOnCopyFailure);
+                },
+                child: Text(
+                  GalleryLocalizations.of(context).demoCodeViewerCopyAll,
+                  style: Theme.of(context).textTheme.button.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
+              ),
+            ],
           ),
         ),
         Expanded(

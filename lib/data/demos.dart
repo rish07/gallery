@@ -3,9 +3,13 @@
 // found in the LICENSE file.
 
 import 'dart:collection';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart' show describeEnum;
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
+import 'package:flutter_gen/gen_l10n/gallery_localizations_en.dart'
+    show GalleryLocalizationsEn;
 import 'package:gallery/codeviewer/code_displayer.dart';
 import 'package:gallery/codeviewer/code_segments.dart';
 import 'package:gallery/data/icons.dart';
@@ -21,6 +25,7 @@ import 'package:gallery/demos/cupertino/cupertino_slider_demo.dart';
 import 'package:gallery/demos/cupertino/cupertino_switch_demo.dart';
 import 'package:gallery/demos/cupertino/cupertino_tab_bar_demo.dart';
 import 'package:gallery/demos/cupertino/cupertino_text_field_demo.dart';
+import 'package:gallery/demos/material/app_bar_demo/app_bar_demo.dart';
 import 'package:gallery/demos/material/banner_demo.dart';
 import 'package:gallery/demos/material/bottom_app_bar_demo.dart';
 import 'package:gallery/demos/material/bottom_navigation_demo.dart';
@@ -43,19 +48,15 @@ import 'package:gallery/demos/material/snackbar_demo.dart';
 import 'package:gallery/demos/material/tabs_demo.dart';
 import 'package:gallery/demos/material/text_field_demo.dart';
 import 'package:gallery/demos/material/tooltip_demo.dart';
-import 'package:gallery/demos/material/app_bar_demo.dart';
+import 'package:gallery/demos/reference/colors_demo.dart';
 import 'package:gallery/demos/reference/motion_demo_container_transition.dart';
-import 'package:gallery/demos/reference/motion_demo_fade_through_transition.dart';
 import 'package:gallery/demos/reference/motion_demo_fade_scale_transition.dart';
+import 'package:gallery/demos/reference/motion_demo_fade_through_transition.dart';
 import 'package:gallery/demos/reference/motion_demo_shared_x_axis_transition.dart';
 import 'package:gallery/demos/reference/motion_demo_shared_y_axis_transition.dart';
 import 'package:gallery/demos/reference/motion_demo_shared_z_axis_transition.dart';
-import 'package:gallery/demos/reference/colors_demo.dart';
 import 'package:gallery/demos/reference/transformations_demo.dart';
 import 'package:gallery/demos/reference/typography_demo.dart';
-import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
-import 'package:flutter_gen/gen_l10n/gallery_localizations_en.dart'
-    show GalleryLocalizationsEn;
 
 const _docsBaseUrl = 'https://api.flutter.dev/flutter';
 const _docsAnimationsUrl =
