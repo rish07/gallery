@@ -1,4 +1,4 @@
 name: Flutter App Bar Demo
-mode: dart
+mode: flutter
 files:
   - name: app_bar_demo.dart
